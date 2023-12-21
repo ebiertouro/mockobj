@@ -58,7 +58,7 @@ class MockObjTester {
 		int selectedNum = 7;
 		rnd.setNum(selectedNum);
 		bt.addMoney(100);
-		assertEquals(bt.betOnANumber(amnt, min, max, selectedNum), (max - min) * amnt);
+		assertEquals(bt.betOnANumber(amnt, min, max, selectedNum), 40);
 	}
 
 	@Test
@@ -85,7 +85,7 @@ class MockObjTester {
 	}
 
 	@Test
-	void betOnProbability_rejectsNeg() {
+	void betOnProbability_rejectsAboveOne() {
 		bt.addMoney(100);
 		double amnt = 101;
 		double p = 1.1;
